@@ -15,4 +15,13 @@ The app will be a flashcard app to test knowlege by presenting flashcards.
 ### Dependancies
 * Node and NPM must be installed
 * Express
+* Pug
+
+## Steps for using Pug
+* Donload Pug using npm
+* Update code in the app to use Pug
+* Create the templates
+* Render the templates using response.render()
+
+
 

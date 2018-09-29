@@ -3,10 +3,13 @@ const express = require('express');
 // Set up express server
 const app = express();
 
+// set the view engine to use pug
+app.set('view engine', 'pug');
+
 //create the root route
 // params 1. location, 2. callback
 app.get('/', (req, res) => {
-  res.send('<h1>This is the default route, so like hello world or something</h1>');
+  res.render('index');
 });
 
 app.get('/hello', (req, res) => {
