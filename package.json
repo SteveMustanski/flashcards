@@ -2,7 +2,7 @@
   "name": "flashcards",
   "version": "1.0.0",
   "description": "## Description This repo contains a practice flashcard app that I built for practice with express.  This is based on treehouse.com exercises.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
