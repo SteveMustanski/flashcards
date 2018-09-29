@@ -1,0 +1,23 @@
+{
+  "name": "flashcards",
+  "version": "1.0.0",
+  "description": "## Description This repo contains a practice flashcard app that I built for practice with express.  This is based on treehouse.com exercises.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SteveMustanski/flashcards.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SteveMustanski/flashcards/issues"
+  },
+  "homepage": "https://github.com/SteveMustanski/flashcards#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
