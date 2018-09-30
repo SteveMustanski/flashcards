@@ -12,8 +12,8 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.get('/hello', (req, res) => {
-  res.send('<h1>Hello JS developer!</h1>');
+app.get('/cards', (req, res) => {
+  res.render('card', {prompt: "Who is buried in Grants tomb?", hint: "Whose tomb is it?"});
 });
 
 // start server listening on port 3000
