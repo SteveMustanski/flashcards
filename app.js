@@ -16,6 +16,10 @@ app.get('/cards', (req, res) => {
   res.render('card', {prompt: "Who is buried in Grants tomb?", hint: "Whose tomb is it?"});
 });
 
+app.get('/hello', (req, res) => {
+  res.render('hello');
+});
+
 // start server listening on port 3000
 // params 1. port 2. callback
 app.listen(3000, () => {

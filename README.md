@@ -20,7 +20,7 @@ The app will be a flashcard app to test knowlege by presenting flashcards.
 
 ## Notes for using some of the technologies incorporated
 
-## Steps for using Pug
+### Steps for using Pug
 * Download Pug using npm
 * Update code in the app to use Pug
 * Create the templates
