@@ -14,8 +14,9 @@ The app will be a flashcard app to test knowlege by presenting flashcards.
 
 ### Dependancies
 * Node and NPM must be installed
-* Express
-* Pug
+* express
+* pug
+* body-parser
 
 
 ## Notes for using some of the technologies incorporated

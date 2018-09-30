@@ -1,7 +1,11 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 // Set up express server
 const app = express();
+
+// set up urlencode parser and turn of extended option
+app.use(bodyParser.urlencoded({extended: false}));
 
 // set the view engine to use pug
 app.set('view engine', 'pug');
@@ -18,6 +22,11 @@ app.get('/cards', (req, res) => {
 
 app.get('/hello', (req, res) => {
   res.render('hello');
+});
+
+app.post('/hello', (req, res) => {
+  res.render('hello');
+  console.dir(req.body);
 });
 
 // start server listening on port 3000
