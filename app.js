@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
 // set up urlencode parser and turn of extended option
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // set up cookie-parser
 app.use(cookieParser());
@@ -17,20 +17,40 @@ app.set('view engine', 'pug');
 //create the root route
 // params 1. location, 2. callback
 app.get('/', (req, res) => {
-  res.render('index');
+  const name = req.cookies.username;
+// check if name is populated, if not redirect to hello template
+  if (name) {
+    res.render('index', { name: name });
+  } else {
+    res.redirect('/hello');
+  }
 });
 
 app.get('/cards', (req, res) => {
-  res.render('card', {prompt: "Who is buried in Grants tomb?", hint: "Whose tomb is it?"});
+  res.render('card', { prompt: "Who is buried in Grants tomb?", hint: "Whose tomb is it?" });
 });
 
 app.get('/hello', (req, res) => {
-  res.render('hello', {name: req.cookies.username});
+// read for name in cookie
+  const name = req.cookies.username;
+// if name is present, redirect to '/' else render hello template
+  if (name) {
+    res.redirect('/');
+  } else {
+    res.render('hello');
+
+  }
 });
 
 app.post('/hello', (req, res) => {
   res.cookie('username', req.body.username);
-  res.render('hello', {name: req.body.username});
+  res.redirect('/');
+
+});
+
+app.post('/goodbye', (req, res) => {
+  res.clearCookie('username');
+  res.redirect('/hello');
 
 });
 
