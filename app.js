@@ -1,11 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 
 // Set up express server
 const app = express();
 
 // set up urlencode parser and turn of extended option
 app.use(bodyParser.urlencoded({extended: false}));
+
+// set up cookie-parser
+app.use(cookieParser());
 
 // set the view engine to use pug
 app.set('view engine', 'pug');
@@ -21,10 +25,11 @@ app.get('/cards', (req, res) => {
 });
 
 app.get('/hello', (req, res) => {
-  res.render('hello');
+  res.render('hello', {name: req.cookies.username});
 });
 
 app.post('/hello', (req, res) => {
+  res.cookie('username', req.body.username);
   res.render('hello', {name: req.body.username});
 
 });

@@ -12,11 +12,12 @@ The app will be a flashcard app to test knowlege by presenting flashcards.
 * Serving static assets
 * Middleware
 
-### Dependancies
+### Dependencies
 * Node and NPM must be installed
 * express
 * pug
 * body-parser
+* cookie-parser
 
 
 ## Notes for using some of the technologies incorporated
