@@ -51,7 +51,21 @@ app.post('/hello', (req, res) => {
 app.post('/goodbye', (req, res) => {
   res.clearCookie('username');
   res.redirect('/hello');
+});
 
+app.use((req, res, next) => {
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+})
+
+// error handler has 4 params
+// when error is passed to next, express looks for the first
+// middleware function with 4 params
+app.use((err, req, res, next) => {
+res.locals.error = err;
+res.status(err.status);
+res.render('error');
 });
 
 // start server listening on port 3000
