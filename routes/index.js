@@ -14,10 +14,6 @@ router.get('/', (req, res) => {
   }
 });
 
-router.get('/cards', (req, res) => {
-  res.render('card', { prompt: "Who is buried in Grants tomb?", hint: "Whose tomb is it?" });
-});
-
 router.get('/hello', (req, res) => {
 // read for name in cookie
   const name = req.cookies.username;

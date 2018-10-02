@@ -17,9 +17,11 @@ app.set('view engine', 'pug');
 // import the routes from the routes directory
 // when importing express looks for index.js in the folder
 // so no need to specify
-const routes = require('./routes');
+const mainRoutes = require('./routes');
+const cardRoutes = require('./routes/cards');
 // make the routes accessible to the app
-app.use(routes);
+app.use(mainRoutes);
+app.use('/cards', cardRoutes);
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
