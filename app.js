@@ -11,6 +11,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // set up cookie-parser
 app.use(cookieParser());
 
+// set up the static middleware to serve static files
+// from the public folder
+// routed to static route to avoid conflicts
+app.use('/static', express.static('public'));
+
+
 // set the view engine to use pug
 app.set('view engine', 'pug');
 
