@@ -23,7 +23,7 @@ router.get('/:id', (req, res) => {
   }
   const text = cards[id][side];
   const {hint} = cards[id];
-  const templateData = {id, text};
+  const templateData = {id, text, side};
 
 // if the side being requested = question, show the hint
   if (side === 'question') {
